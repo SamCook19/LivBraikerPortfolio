@@ -1,4 +1,4 @@
-# React/Redux/Router Starter Project
+Liv Braiker, Art Portfolio
 
 > Provided for the students of the [Bottega Code School](https://bottega.tech/)
 
