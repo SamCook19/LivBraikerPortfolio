@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 import Menu from './navmenu';
 
 class Header extends Component {
@@ -6,7 +7,7 @@ class Header extends Component {
         return (
             <div className="header-container">
                 <div className="headerName">
-                <h1>Liv Braiker</h1>
+                <NavLink to="/" activeClassName="nav-link-active"><h1>Liv Braiker</h1></NavLink>
                 </div>
                 <div className="nav-menu">
                 <Menu/>
