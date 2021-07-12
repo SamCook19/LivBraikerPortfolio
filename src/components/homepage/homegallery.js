@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+import Slider from "react-slick";
 import GalleryContent from './gallerycontent';
 
 const db = firebase.default.firestore()
@@ -47,27 +48,40 @@ class HomeGallery extends Component {
     }
 
     render() {
+        // const settings = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 500,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        //   };
         return (
             <div className="gallery-container">
                 <div className="featured-work">
                     <h1>Featured Work</h1>
                 </div>
-                <div className="gallery">
-                {
-                      this.state.isLoaded ?
-                        this.state.pictures.map((pictures, index) => {
-                          return(
-                          <GalleryContent className='whoweare'
-                            key={index}
-                            data={pictures}
-                          />
-                          )
-                        })
-                        : '' 
-                      }
+                <div className='CarouselContainer'>
+        <Carousel  id="slide"
+        indicators={true}
+        className='right-side-carousel'>
+          
+         {
                     
-                </div>
-            </div>
+                        this.state.pictures.map((picture, index) => 
+                          
+                          <Carousel.Item>
+                         
+                            <GalleryContent
+                            key={index} 
+                            data={picture}
+                            />
+                        </Carousel.Item>
+                        )
+                }
+               
+                    </Carousel>
+                  </div>  
+          </div>
         );
     }
 }

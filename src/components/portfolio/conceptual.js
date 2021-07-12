@@ -11,7 +11,7 @@ class Conceptual extends Component {
                 </div>
                 
                 <div className="conceptual-body">
-                    conceptual
+                    <h1>Conceptual Projects</h1>
                 </div>
             </div>
             </div>

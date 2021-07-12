@@ -11,7 +11,11 @@ class Illustration extends Component {
                 </div>
                 
                 <div className="illustration-body">
-                    illustrations
+                    <h1>Illustrations/Prints, Watercolor</h1>
+                    <h2>DIGITAL WORK</h2>
+                    {/* Insert Digital Work Component */}
+                    <h2>TRADITIONAL WORK</h2>
+                    {/* Insert Trad Work Componentw */}
                 </div>
             </div>
             </div>

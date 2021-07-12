@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../navigation/header';
+import AboutComponent from './aboutcomponent';
 
 class About extends Component {
+    
     render() {
         return (
             <div>
@@ -11,7 +13,8 @@ class About extends Component {
                 </div>
                 
                 <div className="about-body">
-                    about
+                    <h1>About</h1>
+                    <AboutComponent />
                 </div>
             </div>
             </div>
