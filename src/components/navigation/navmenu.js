@@ -8,11 +8,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from "react-router-dom";
 import MenuIcon from '@material-ui/icons/Menu';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import PortfolioNested from './portfolioMenu';
 
-const theme = createMuiTheme({
+const theme = createTheme({
     typography: {
       body1: {
         fontFamily: "StellarLight",

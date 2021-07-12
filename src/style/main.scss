@@ -1,5 +1,5 @@
 @import 'navigation.scss';
-
+@import 'manager.scss';
 
 html {
     font-size: 62.5%; // 1rem is 10px
@@ -11,7 +11,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'montserrat';
+    font-family: 'Uchen', serif;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
-    height: 100vh;
+    font-family: 'Uchen', serif;
 }
 
 .app {

@@ -8,6 +8,7 @@ import About from './about/about.js';
 import Contact from './contact/contact.js';
 import Other from './portfolio/other.js';
 import Conceptual from './portfolio/conceptual.js';
+import Manager from './manager/manager.js';
 
 export default class Layout extends Component {
   
@@ -25,6 +26,7 @@ export default class Layout extends Component {
               <Route exact path="/conceptual" component={Conceptual}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/about" component={About}/>
+              <Route exact path="/manager" component={Manager}/>
           </Switch>
           </Router>
         </div>

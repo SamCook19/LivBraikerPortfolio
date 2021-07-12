@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../navigation/header';
 
+import ContactForm from './contactform';
+
 class Contact extends Component {
     render() {
         return (
@@ -11,7 +13,7 @@ class Contact extends Component {
                 </div>
                 
                 <div className="contact-body">
-                    
+                    <ContactForm />
                 </div>
             </div>
             </div>
