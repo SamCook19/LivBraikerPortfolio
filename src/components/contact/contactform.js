@@ -87,9 +87,7 @@ export default function ContactForm() {
                 </button>
                 </div>
               </form>
-              <div className="disclaimer">
-              If you or someone you know is in need of supportive services related to domestic violence or sexual assault, please either contact our 24 hour hotline at 435-233-5732 for immediate assistance or complete <a href="https://apricot.socialsolutions.com/auth/autologin/org_id/1698/hash/fe63cfb2b7190a8b89cde77419b8d89c5af6ee4e">this</a> form and a member of our team will contact you as soon as possible.
-              </div>
+              
             </div>
             
           </div>

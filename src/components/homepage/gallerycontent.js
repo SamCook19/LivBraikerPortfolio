@@ -7,6 +7,7 @@ const GalleryContent = (props) => {
         <div className="GalleryImg">
             
             <img 
+            height= "400px"
             top
             src={props.data.featuredImage}
             alt="Card Image"

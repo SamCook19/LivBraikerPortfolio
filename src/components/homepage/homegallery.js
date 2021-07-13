@@ -48,21 +48,17 @@ class HomeGallery extends Component {
     }
 
     render() {
-        // const settings = {
-        //     dots: true,
-        //     infinite: true,
-        //     speed: 500,
-        //     slidesToShow: 1,
-        //     slidesToScroll: 1
-        //   };
         return (
             <div className="gallery-container">
                 <div className="featured-work">
-                    <h1>Featured Work</h1>
+                    <h1 className="display-1">FEATURED WORK</h1>
                 </div>
                 <div className='CarouselContainer'>
         <Carousel  id="slide"
-        indicators={true}
+        indicators={false}
+        fade={false}
+        controls={false}
+        interval= "2000"
         className='right-side-carousel'>
           
          {

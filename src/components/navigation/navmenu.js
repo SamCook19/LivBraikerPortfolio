@@ -15,15 +15,15 @@ import PortfolioNested from './portfolioMenu';
 const theme = createTheme({
     typography: {
       body1: {
-        fontFamily: "StellarLight",
-        fontSize: 14
+        fontFamily: "Uchen",
+        fontSize: 24
       }
     }
   })
   
   const useStyles = makeStyles({
     list: {
-      width: 125,
+      width: 225,
       
     },
     fullList: {
@@ -32,6 +32,7 @@ const theme = createTheme({
   
     root: {
       textAlign: 'center',
+      
     },
   
     menu: {
@@ -39,6 +40,7 @@ const theme = createTheme({
       width: 35,
       
     },
+
   
     
   });
@@ -87,7 +89,7 @@ const theme = createTheme({
         {[''].map((anchor) => (
           <React.Fragment key={anchor}>
             <Button className={classes.root} onClick={toggleDrawer(anchor, true)}>
-              <div className='label'><MenuIcon style={{ fontSize: 40 }}/></div>  {anchor}</Button>
+              <div className='label'><MenuIcon style={{ fontSize: 58 }}/></div>  {anchor}</Button>
             <Drawer anchor={'right'} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
               {list(anchor)}
             </Drawer>

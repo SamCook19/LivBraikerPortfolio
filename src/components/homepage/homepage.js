@@ -10,10 +10,14 @@ class Homepage extends Component {
                 <div className="header">
                     <Header />
                 </div>
-                
-                <div className="homepage-body">
+                <div className="home-container">
                     <HomeGallery />
+                    </div>
+                <div className="homepage-container">
+                
                 </div>
+                
+                
             </div>
         );
     }
