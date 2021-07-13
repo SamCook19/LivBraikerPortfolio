@@ -1,0 +1,53 @@
+.DigitalImage img {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+.ImageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.DigitalImage {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    overflow: hidden;
+}
+
+.TraditionalImage img {
+    height: 450px;
+}
+
+.TraditionalImage {
+    width: 300px;
+    overflow: hidden;
+}
+
+
+.TraditionalGalleryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 25px;
+}
+
+.illustration-heading {
+    display: flex;
+    justify-content: center;
+}
+
+.illustration-spacer {
+    height: 45px;
+}
+
+.TraditionalImage {
+    display: flex;
+    justify-content: center;
+}
+
+.DigitalGalleryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 25px;
+}
