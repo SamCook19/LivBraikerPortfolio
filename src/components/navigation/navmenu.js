@@ -15,7 +15,7 @@ import PortfolioNested from './portfolioMenu';
 const theme = createTheme({
     typography: {
       body1: {
-        fontFamily: "Uchen",
+        fontFamily: "Futura",
         fontSize: 24
       }
     }

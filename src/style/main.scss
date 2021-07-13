@@ -3,6 +3,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "homepage.scss";
 
+@font-face {
+    font-family: "Futura";
+    src: local("Futura"),
+    url("../../static/assets/fonts/futura\ medium\ bt.woff") format("woff");
+}
+
 html {
     font-size: 62.5%; // 1rem is 10px
 }
@@ -13,7 +19,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'Uchen', serif;
+    font-family: 'Futura', serif;
 }
 
 body {
@@ -24,7 +30,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
-    font-family: 'Uchen', serif;
+    font-family: 'Futura', serif;
 }
 
 .app {
