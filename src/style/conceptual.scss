@@ -1,0 +1,22 @@
+.ConceptualTitle {
+    font-weight: bold;
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.ConceptualSubtitle {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.ConceptualContainer {
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conceptual-spacer {
+    height: 45px;
+}

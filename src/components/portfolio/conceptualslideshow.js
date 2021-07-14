@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
 import Carousel from 'react-bootstrap/Carousel';
-import parse from 'html-react-parser';
 
 const db = firebase.default.firestore()
 
@@ -52,6 +51,10 @@ render() {
             <div className='CarouselContainer'>
         <Carousel  id="slide"
         indicators={true}
+        fade={false}
+        controls={true}
+        
+        interval= "2000"
         className='right-side-carousel'>
           
          {
@@ -71,6 +74,7 @@ render() {
                     </Carousel>
                     
           </div>
+          <div className="conceptual-spacer"></div>
     </div>
     )}
 }

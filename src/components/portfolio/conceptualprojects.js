@@ -75,21 +75,9 @@ class ConceptualProjects extends Component {
                     })
                     : ''
                 }
+                
                  </div>
-                 {/* <div className="Slideshow">
-                 {
-                    this.state.isLoaded ?
-                    this.state.info.map((info, index) => {
-                        return(
-                            <ConceptualSlideshow className="ConceptualContent"
-                            key={index}
-                            data={info}
-                            />
-                        )
-                    })
-                    : ''
-                }
-                 </div> */}
+                 
                 
             </div>
         );

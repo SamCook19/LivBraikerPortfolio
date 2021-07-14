@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
-import Carousel from 'react-bootstrap/Carousel'
-import AboutContent from './aboutcontent';
 
 const db = firebase.default.firestore()
 
@@ -11,15 +9,19 @@ class AboutComponent extends Component {
         super(props);
         this.state={
             isLoaded: false,
-            pictures: []
+            pictures: [],
+            headshot: [],
+            about: [],
         }
     }
 
     componentDidMount() {
-        this.getMyPictures()
+        this.getMyAccolades()
+        this.getMyHeadshot()
+        this.getMyAbout()
     }
 
-    getMyPictures = () => {
+    getMyAccolades = () => {
         db
         .collection( 'About' )
         .get()
@@ -46,18 +48,98 @@ class AboutComponent extends Component {
         })
     }
 
+    getMyHeadshot = () => {
+        db
+        .collection( 'Headshot' )
+        .get()
+        .then(docs => {
+            if(!docs.empty){
+                let allHeadshot = []
+                docs.forEach(function (doc) {
+                    const picture = {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+
+                    allHeadshot.push(picture)
+                })
+
+                this.setState({
+                    headshot: allHeadshot
+                })
+            }
+        })
+    }
+
+    getMyAbout = () => {
+        db
+        .collection( 'LivAbout' )
+        .get()
+        .then(docs => {
+            if(!docs.empty){
+                let About = []
+                docs.forEach(function (doc) {
+                    const about = {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+
+                    About.push(about)
+                })
+
+                this.setState({
+                    about: About
+                })
+            }
+        })
+    }
+
     render() {
         return (
             <div className="about-container">
+                <div className="headshot">
+                {
+                      this.state.isLoaded ?
+                        this.state.headshot.map((headshot, index) => {
+                          return(
+                            <div>
+                          <Headshot className="Headshot"
+                            key={index}
+                            data={headshot}
+                          />
+                          </div>
+                          )
+                        })
+                        : '' 
+                      }
+                </div>
                 <div className="about">
+                {
+                      this.state.isLoaded ?
+                        this.state.about.map((about, index) => {
+                          return(
+                            <div>
+                          <About className="About"
+                            key={index}
+                            data={about}
+                          />
+                          </div>
+                          )
+                        })
+                        : '' 
+                      }
+                </div>
+                <div className="accolades">
                 {
                       this.state.isLoaded ?
                         this.state.pictures.map((pictures, index) => {
                           return(
-                          <AboutContent className='AboutContent'
+                            <div>
+                          <Accolades className="Accolades"
                             key={index}
                             data={pictures}
                           />
+                          </div>
                           )
                         })
                         : '' 
@@ -67,6 +149,35 @@ class AboutComponent extends Component {
             </div>
         );
     }
+}
+
+const Headshot = (props) => {
+    return (
+            <div className="headshot">
+                <img
+                src={props.data.headshot}
+                />
+            </div>
+        
+    )
+}
+
+const Accolades = (props) => {
+    return (
+        <div className="accoladeContainer">
+            {props.data.accolade}
+            </div>
+    )
+}
+
+const About = (props) => {
+    return (
+        <div className="about-container">
+                 <div className="about-container">
+                    {props.data.About}
+                </div>
+        </div>
+    )
 }
 
 export default AboutComponent;
