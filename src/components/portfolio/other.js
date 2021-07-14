@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../navigation/header';
+import OtherProjects from './otherprojects';
 
 class Other extends Component {
     render() {
@@ -12,6 +13,7 @@ class Other extends Component {
                 
                 <div className="other-body">
                     <h1>Other Media Projects</h1>
+                    <OtherProjects />
                 </div>
             </div>
             </div>

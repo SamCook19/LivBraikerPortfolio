@@ -1,0 +1,13 @@
+.OtherMediaImages img {
+    max-height: 300px;
+}
+
+.ImageContainerOther {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.OtherMediaImages {
+    display: flex;
+    justify-content: center;
+}
