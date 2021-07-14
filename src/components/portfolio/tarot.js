@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
 import parse from 'html-react-parser';
-import OtherMedia from './othermedia';
+import TarotImg from './tarotimg';
 
 const db = firebase.default.firestore()
 
-class OtherProjects extends Component {
+class TarotCards extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -22,7 +22,7 @@ class OtherProjects extends Component {
 
     getMyInfo = () => {
         db
-        .collection( 'OtherMedia' )
+        .collection( 'Tarot' )
         .get()
         .then(docs => {
             if(!docs.empty){
@@ -52,6 +52,7 @@ class OtherProjects extends Component {
     render() {
         return (
             <div className="ConceptualProjectContainer">
+                <h1>Tarot Cards</h1>
                 <div>
                 {
                     this.state.isLoaded ?
@@ -65,7 +66,7 @@ class OtherProjects extends Component {
                             />
                             </div>
                             <div>
-                            <OtherMedia className="ConceptualSlideshow"
+                            <TarotImg className="ConceptualSlideshow"
                             key={index}
                             data={info}/>
                             </div>
@@ -87,11 +88,8 @@ class OtherProjects extends Component {
 const OtherContent = (props) => {
     return (
         <div className="OtherContainer">
-        <h1 className= "OtherTitle">
+        <h2 className= "OtherTitle">
             {parse(props.data.title)}
-            </h1>
-            <h2 className="OtherSubtitle">
-                {parse(props.data.subtitle)}
             </h2>
         </div>
         
@@ -99,4 +97,4 @@ const OtherContent = (props) => {
 }
 
 
-export default OtherProjects;
+export default TarotCards;

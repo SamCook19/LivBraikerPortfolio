@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../navigation/header';
 import OtherProjects from './otherprojects';
+import TarotCards from './tarot';
 
 class Other extends Component {
     render() {
@@ -13,6 +14,7 @@ class Other extends Component {
                 
                 <div className="other-body">
                     <h1>Other Media Projects</h1>
+                    <TarotCards />
                     <OtherProjects />
                 </div>
             </div>

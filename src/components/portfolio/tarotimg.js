@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
+import Carousel from 'react-bootstrap/Carousel';
 
 const db = firebase.default.firestore()
 
-class OtherMedia extends Component {
+class TarotImg extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -18,7 +19,7 @@ componentDidMount() {
 
 getMyImages = () => {
     db
-    .collection( 'OtherMedia' ).doc(`${this.props.data.id}`)
+    .collection( 'Tarot' ).doc(`${this.props.data.id}`)
     .collection('images')
     .get()
     .then(docs => {
@@ -46,31 +47,36 @@ getMyImages = () => {
 
 render() {
     return (
-        <div className="OtherProjectContainer">
-            <div className='ImageContainerOther'>
+        <div className="ConceptualProjectContainer">
+            <div className='CarouselContainer'>
+        
           
          {
                     
                         this.state.images.map((image, index) => 
+                          
+                          
                          
-                            <OtherMediaImages
+                            <TarotImages
                             key={index} 
                             data={image}
                             />
+                        
                         )
                 }
-          
+               
+                    
+                    
           </div>
-          <div className="conceptual-spacer"></div>
+          <div className="Tarot-spacer"></div>
     </div>
     )}
 }
 
-
-const OtherMediaImages = (props) => {
+const TarotImages = (props) => {
     return (
-        <div className="OtherMediaImages">
-            <div className="OtherImageContainer">
+        <div className="TarotSlideshow">
+            <div className="TarotGalleryContainer">
                 <img
                 src={props.data.featuredImage}
                 />
@@ -79,4 +85,4 @@ const OtherMediaImages = (props) => {
     )
 }
 
-export default OtherMedia;
+export default TarotImg;
