@@ -31,7 +31,7 @@ export default class Layout extends Component {
               <Route exact path="/conceptual" component={Conceptual}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/about" component={About}/>
-              <Route exact path="/manager" component={Manager}/>
+              <PrivateRoute exact path="/manager" component={Manager}/>
               <Route exact path="/login" component={Login}/>
               <PrivateRoute path='/logout' component={Logout}/>
               <Route component={NoMatch} />

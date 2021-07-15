@@ -23,6 +23,9 @@ class Manager extends Component {
                     <div className="add-conceptual">
                         Conceptual
                     </div>
+                    <div className="add-about">
+                        About
+                    </div>
                 </div>
             </div>
             </div>

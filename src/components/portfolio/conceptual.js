@@ -12,7 +12,9 @@ class Conceptual extends Component {
                 </div>
                 
                 <div className="conceptual-body">
-                    <h1>Conceptual Projects</h1>
+                    <div className="pageheading">
+                    <h1 className="display-2">Conceptual Projects</h1>
+                    </div>
                     <ConceptualProjects />
                 </div>
             </div>

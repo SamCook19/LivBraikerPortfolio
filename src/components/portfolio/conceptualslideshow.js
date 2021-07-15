@@ -54,7 +54,7 @@ render() {
         fade={false}
         controls={true}
         
-        interval= "2000"
+        interval = {null}
         className='right-side-carousel'>
           
          {

@@ -12,7 +12,9 @@ class Illustration extends Component {
                     <Header />
                 </div>
                 <div className="illustration-body">
-                    <h1>Illustrations<small class="text-muted">/Prints, Watercolor</small></h1>
+                    <div className="pageheading">
+                    <h1 className="display-2">Illustrations<small class="text-muted">/Prints, Watercolor</small></h1>
+                    </div>
                     <div className="illustration-spacer"></div>
                     <div className="digital-container">
                         <div className="illustration-heading"><h1><small class="text-muted">DIGITAL WORK</small></h1></div>
