@@ -165,7 +165,7 @@ const Headshot = (props) => {
 const Accolades = (props) => {
     return (
         <div className="accoladeContainer">
-            {props.data.accolade}
+            <h3 className="accolade">{props.data.accolade}</h3>
             </div>
     )
 }

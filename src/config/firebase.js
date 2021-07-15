@@ -20,5 +20,5 @@ firebase.default.auth()
 firebase.default.analytics()
 
 
-// export const auth = app.auth()
+export const auth = firebase.default.auth()
 export default firebase

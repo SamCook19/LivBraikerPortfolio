@@ -52,13 +52,15 @@ class TarotCards extends Component {
     render() {
         return (
             <div className="ConceptualProjectContainer">
-                <h1>Tarot Cards</h1>
+                <div className="tarot-header">
+                <h1 className="display-4">Tarot Cards</h1>
+                </div>
                 <div>
                 {
                     this.state.isLoaded ?
                     this.state.info.map((info, index) => {
                         return(
-                            <div>
+                            <div className="tarot-container">
                             <div>
                             <OtherContent className="OtherContent"
                             key={index}

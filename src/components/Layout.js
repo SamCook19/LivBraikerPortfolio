@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-
+import { AuthProvider } from "../contexts/AuthContext"
 import Homepage from './homepage/homepage.js';
 import Illustration from './portfolio/illustration';
 import About from './about/about.js';
@@ -9,6 +9,10 @@ import Contact from './contact/contact.js';
 import Other from './portfolio/other.js';
 import Conceptual from './portfolio/conceptual.js';
 import Manager from './manager/manager.js';
+import Login from './auth/login.js';
+import Logout from './auth/logout.js';
+import NoMatch from './otherpages/no-match';
+import PrivateRoute from './PrivateRoute.js';
 
 export default class Layout extends Component {
   
@@ -18,6 +22,7 @@ export default class Layout extends Component {
           
           <div className='route-container'>
           <Router>
+            <AuthProvider>
           <Switch>
               <Route exact path="/" component={Homepage}/>
               <Route exact path="/home" component={Homepage}/>
@@ -27,7 +32,11 @@ export default class Layout extends Component {
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/about" component={About}/>
               <Route exact path="/manager" component={Manager}/>
+              <Route exact path="/login" component={Login}/>
+              <PrivateRoute path='/logout' component={Logout}/>
+              <Route component={NoMatch} />
           </Switch>
+          </AuthProvider>
           </Router>
         </div>
         

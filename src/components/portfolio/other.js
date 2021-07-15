@@ -13,7 +13,9 @@ class Other extends Component {
                 </div>
                 
                 <div className="other-body">
-                    <h1>Other Media Projects</h1>
+                    <div className="pageheading">
+                    <h1 className="display-2">Other Media Projects</h1>
+                    </div>
                     <TarotCards />
                     <OtherProjects />
                 </div>

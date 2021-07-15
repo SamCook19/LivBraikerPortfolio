@@ -48,7 +48,7 @@ getMyImages = () => {
 render() {
     return (
         <div className="ConceptualProjectContainer">
-            <div className='CarouselContainer'>
+            <div className='TarotContainer'>
         
           
          {
