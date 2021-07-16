@@ -11,6 +11,23 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import PortfolioNested from './portfolioMenu';
+import {NavLink} from 'reactstrap';
+import { useAuth } from '../../contexts/AuthContext';
+
+function PortfolioManagerButton() {
+  const { currentUser } = useAuth();
+
+  return ( 
+    currentUser ? (
+      <div className="portfoliomanager-link">
+          <NavLink href="/manager">
+            Portfolio Manager
+          </NavLink>
+      </div>
+    ) : null
+  )
+
+}
 
 const theme = createTheme({
     typography: {
@@ -76,6 +93,9 @@ const theme = createTheme({
           </ListItem>
           <ListItem button component={Link} to="/contact">
             <ListItemText primary="Contact"/>
+          </ListItem>
+          <ListItem>
+            <PortfolioManagerButton primary="Portfolio Manager"/>
           </ListItem>
         </List>
        

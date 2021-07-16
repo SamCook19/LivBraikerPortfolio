@@ -1,19 +1,42 @@
 .name-area {
     width: 100%;
-}
-
-.name-area {
     font-size: 34px;
 }
 
 .email-area {
     width: 100%;
+    font-size: 34px;
+}
+
+.subject-area {
+    font-size: 34px;
 }
 
 .message-area {
     width: 100%;
 }
 
-.contactForm {
-    background-color: aquamarine;
+.row {
+    grid-gap: 35px;
+}
+
+.message-area {
+    font-size: 34px;
+    margin-top: 35px;
+    height: 500px;
+}
+
+.submit-btn {
+    height: 75px;
+    width: 150px;
+    font-size: 24px;
+    border-radius: 88px;
+    border: none;
+    margin: 25px;
+}
+
+.submit-btn:hover {
+    background-color: #BD31A7;
+    transition: ease-in-out 0.3s;
+    color: white;
 }

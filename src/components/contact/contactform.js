@@ -42,19 +42,8 @@ export default function ContactForm() {
                     ></input>
                     
                   </div>
-                  <div className='emaildropdown'>
-                    <select id='emails'
-                    type='to'
-                    name='recipient'
-                    className='form-dropdown'
-                    placeholder='recipient address'>
-                      <option value="prevention@canyoncreekservices.org">Community Outreach/ Education/Awareness/Prevention</option>
-                    </select>
-                  </div>
-                </div>
-                {/* Row 2 of form */}
-                <div className='row formRow'>
-                  <div className='col'>
+                  <div className='row formRow'>
+                  <div className='col-6'>
                     <input
                       type='text'
                       name='subject'
@@ -65,6 +54,8 @@ export default function ContactForm() {
                   </div>
                  
                 </div>
+                </div>
+               
                 {/* Row 3 of form */}
                 <div className='row formRow'>
                   <div className='col'>
