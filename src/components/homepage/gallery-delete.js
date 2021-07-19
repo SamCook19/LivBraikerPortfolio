@@ -6,12 +6,12 @@ export default function RemoveImage (props)  {
 
 const db = firebase.default.firestore()
 
-function removeImage() {
-    db.collection("FeaturedGallery").doc(`${props.data.id}`)
+async function removeImage() {
+    await db.collection("FeaturedGallery").doc(`${props.data.id}`)
         .delete()
         
             .catch( err => console.log(err))
-            
+            location.reload()
 }
 
   const { currentUser } = useAuth();

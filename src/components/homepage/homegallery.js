@@ -98,7 +98,7 @@ const GalleryContent = (props) => {
             alt="Card Image"
             className="GalleryImg"
             />
-            <div className='article-delete'>
+            <div className='delete'>
             <RemoveImage data={props.data} />
             </div>
             

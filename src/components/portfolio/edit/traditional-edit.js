@@ -1,15 +1,12 @@
-
-    import React, { Component } from 'react';
+import React, { Component } from 'react';
     import {Container, Row, Col, FormGroup, Label, Input, Button} from 'reactstrap';
-    import ReactQuill from 'react-quill'
     import 'react-quill/dist/quill.snow.css'
     import firebase from "firebase";
     import { v4 as uuidv4 } from 'uuid'
     import { makeStyles } from '@material-ui/core/styles';
     import Modal from '@material-ui/core/Modal';
-    import { useAuth } from '../../contexts/AuthContext';
+    import { useAuth } from '../../../contexts/AuthContext';
     import { withRouter } from 'react-router';
-    import history from '../history'
     
     const db = firebase.default.firestore()
     const storageRef = firebase.storage()
@@ -62,21 +59,21 @@
             currentUser ? (
           <div>
             <button type="button" onClick={handleOpen}>
-              Add New Carousel Images
+              Add New Images
             </button>
             <Modal
               open={open}
               onClose={handleClose}
             >
           <div className='Edit'>
-          <CarouselEdit />
+          <TraditionalEdit />
           </div>
             </Modal>
           </div> ) : null
         );
       }
     
-    class CarouselEdit extends Component {
+    class TraditionalEdit extends Component {
         constructor(props) {
             super(props);
             
@@ -126,13 +123,13 @@
         submitArticle = async () => {
             const article = this.state.article
 
-           await db.collection("FeaturedGallery")
+           await db.collection( 'Traditional' )
                 .add(
                     article
                 )
                 
                 .catch( err => console.log(err))
-                location.reload();
+                location.reload()
                 
         }
     
@@ -140,10 +137,10 @@
             return new Promise(async(resolve, reject) => {
                 const file = e.target.files[0]
                 const fileName = uuidv4()
-                storageRef.ref().child("FeaturedGallery/" + fileName).put(file)
+                storageRef.ref().child("Traditional/" + fileName).put(file)
                 .then( async snapshot => {
                     
-                    const downloadURL = await storageRef.ref().child("FeaturedGallery/" +fileName).getDownloadURL()
+                    const downloadURL = await storageRef.ref().child("Traditional/" +fileName).getDownloadURL()
     
                     resolve({
                         success: true,
@@ -160,7 +157,7 @@
                 <Row>  
                                 
                     <Col className='right-column'>
-                    <h2 className='SectionTitle'>Edit Featured Images</h2>
+                    <h2 className='SectionTitle'>Edit Images</h2>
                                 <FormGroup className='edit-featured-image'> Featured Image
                                     <Input type="file" accept='image/*' className="image-uploader"
                                     onChange={async (e) => {
