@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import firebase from '../../config/firebase';
 import Carousel from 'react-bootstrap/Carousel';
 import Slider from "react-slick";
-import GalleryContent from './gallerycontent';
+import RemoveImage from './gallery-delete';
+import GalleryEdit from './gallery-edit';
 
 const db = firebase.default.firestore()
-
 
 class HomeGallery extends Component {
     constructor(props) {
@@ -76,10 +76,34 @@ class HomeGallery extends Component {
                 }
                
                     </Carousel>
+                    
                   </div>  
+                  <div className="home-carouseledit">
+                        <GalleryEdit />
+                    </div>
           </div>
         );
     }
+}
+
+
+const GalleryContent = (props) => {
+    return (
+        <div className="GalleryImg">
+            
+            <img 
+            height= "400px"
+            top
+            src={props.data.featuredImage}
+            alt="Card Image"
+            className="GalleryImg"
+            />
+            <div className='article-delete'>
+            <RemoveImage data={props.data} />
+            </div>
+            
+        </div>
+    )
 }
 
 export default HomeGallery;

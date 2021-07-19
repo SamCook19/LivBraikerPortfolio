@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import Header from '../navigation/header';
+import firebase from '../../config/firebase';
+import PortfolioItem from './portfolioitem';
+
+const db = firebase.default.firestore()
 
 class Manager extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isLoading: false,
+            data: []
+        }
+    }
+
+   
     render() {
         return (
             <div>
@@ -11,21 +25,22 @@ class Manager extends Component {
                 </div>
                 
                 <div className="manager-body">
-                    <div className="add-featured">
+                    <button className="add-featured">
                         Featured
-                    </div>
-                    <div className="add-illustration">
+                    </button>
+                    <button className="add-illustration">
                         Illustration
-                    </div>
-                    <div className="add-othermedia">
+                    </button>
+                    <button className="add-othermedia">
                         Other Media
-                    </div>
-                    <div className="add-conceptual">
+                    </button>
+                    <button className="add-conceptual">
                         Conceptual
-                    </div>
-                    <div className="add-about">
+                    </button>
+                    <button className="add-about">
                         About
-                    </div>
+                    </button>
+                    <div className="portfolio-items"></div>
                 </div>
             </div>
             </div>
