@@ -19,6 +19,7 @@ firebase.default.firestore()
 firebase.default.auth()
 firebase.default.analytics()
 
+export const storage = firebase.default.storage()
 
 export const auth = firebase.default.auth()
 export default firebase

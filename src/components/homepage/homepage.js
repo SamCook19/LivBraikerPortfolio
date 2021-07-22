@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../navigation/header';
 import HomeGallery from './homegallery';
 
+
 class Homepage extends Component {
     render() {
         return (

@@ -2,8 +2,30 @@ import React, { Component } from 'react';
 import firebase from '../../config/firebase';
 import parse from 'html-react-parser';
 import TarotImg from './tarotimg';
+import { useAuth } from '../../contexts/AuthContext';
 
 const db = firebase.default.firestore()
+
+function RemoveProject (props) {
+    const db = firebase.default.firestore()
+
+async function removeProject() {
+    await db.collection("Tarot").doc(`${props.data.id}`)
+        .delete()
+        
+            .catch( err => console.log(err))
+            location.reload()
+}
+
+  const { currentUser } = useAuth();
+
+  return (
+    currentUser ? (
+        <button onClick={() => removeProject(props.data.id)}>Delete Project</button>
+        ): null 
+
+  );
+}
 
 class TarotCards extends Component {
     constructor(props) {
@@ -71,6 +93,9 @@ class TarotCards extends Component {
                             <TarotImg className="ConceptualSlideshow"
                             key={index}
                             data={info}/>
+                            </div>
+                            <div className="deleteproject">
+                                <RemoveProject />
                             </div>
                             </div>
                         )

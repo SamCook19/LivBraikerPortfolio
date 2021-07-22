@@ -1,0 +1,15 @@
+@media (max-width: 1000px) {
+    .site-container {
+        width: 100% !important; 
+    }
+    .display-1 {
+        font-size: 32px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-container {
+        top: unset;
+    }
+}
+

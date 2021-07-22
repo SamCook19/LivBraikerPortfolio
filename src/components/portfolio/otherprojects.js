@@ -2,8 +2,32 @@ import React, { Component } from 'react';
 import firebase from '../../config/firebase';
 import parse from 'html-react-parser';
 import OtherMedia from './othermedia';
+import { useAuth } from '../../contexts/AuthContext';
+
+import { Remove } from '@material-ui/icons';
 
 const db = firebase.default.firestore()
+
+function RemoveProject (props) {
+    const db = firebase.default.firestore()
+
+async function removeProject() {
+    await db.collection("OtherMedia").doc(`${props.data.id}`)
+        .delete()
+        
+            .catch( err => console.log(err))
+            location.reload()
+}
+
+  const { currentUser } = useAuth();
+
+  return (
+    currentUser ? (
+        <button onClick={() => removeProject()}>Delete Project</button>
+        ): null 
+
+  );
+}
 
 class OtherProjects extends Component {
     constructor(props) {
@@ -20,8 +44,8 @@ class OtherProjects extends Component {
     }
 
 
-    getMyInfo = () => {
-        db
+    getMyInfo = async ()  => {
+        await db
         .collection( 'OtherMedia' )
         .get()
         .then(docs => {
@@ -46,12 +70,13 @@ class OtherProjects extends Component {
             }
             
         })
+        console.log(this.state.info)
     }
 
 
     render() {
         return (
-            <div className="ConceptualProjectContainer">
+            <div className="OtherProjectContainer">
                 <div>
                 {
                     this.state.isLoaded ?
@@ -65,9 +90,13 @@ class OtherProjects extends Component {
                             />
                             </div>
                             <div>
-                            <OtherMedia className="ConceptualSlideshow"
+                            <OtherMedia className="OtherSlideshow"
                             key={index}
                             data={info}/>
+                            </div>
+                            <div className="deleteproject">
+                                <RemoveProject key={index}
+                                                data={info}/>
                             </div>
                             </div>
                         )

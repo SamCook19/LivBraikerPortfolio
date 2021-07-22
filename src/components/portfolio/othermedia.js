@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
+import GalleryAddition from './edit/add-new-other';
 
 const db = firebase.default.firestore()
 
@@ -9,6 +10,7 @@ class OtherMedia extends Component {
         this.state={
             isLoaded: false,
             images: [],
+            info: []
         }
     }
 
@@ -16,8 +18,10 @@ componentDidMount() {
     this.getMyImages()
 }
 
-getMyImages = () => {
-    db
+
+
+getMyImages = async () => {
+    await db
     .collection( 'OtherMedia' ).doc(`${this.props.data.id}`)
     .collection('images')
     .get()
@@ -41,7 +45,7 @@ getMyImages = () => {
             })
         }
     })
-    
+    // console.log(this.props)
 }
 
 render() {
@@ -56,10 +60,16 @@ render() {
                             <OtherMediaImages
                             key={index} 
                             data={image}
+                            
                             />
                         )
+                       
+                        
                 }
-          
+                
+          </div>
+          <div>
+              <GalleryAddition data={this.props.data}/>
           </div>
           <div className="conceptual-spacer"></div>
     </div>
@@ -75,6 +85,7 @@ const OtherMediaImages = (props) => {
                 src={props.data.featuredImage}
                 />
             </div>
+            
         </div>
     )
 }
