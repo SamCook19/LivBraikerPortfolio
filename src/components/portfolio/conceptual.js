@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../navigation/header';
 import ConceptualProjects from './conceptualprojects';
+import GalleryEdit from './edit/conceptual-edit';
 
 class Conceptual extends Component {
     render() {
@@ -16,7 +17,11 @@ class Conceptual extends Component {
                     <h1 className="display-2">Conceptual Projects</h1>
                     </div>
                     <ConceptualProjects />
+                    <div>
+                        <GalleryEdit />
+                    </div>
                 </div>
+                
             </div>
             </div>
         );

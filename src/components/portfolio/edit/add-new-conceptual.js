@@ -66,14 +66,14 @@ import React, { Component } from 'react';
               onClose={handleClose}
             >
           <div className='Edit'>
-          <AddNewOther data={props.data.id}/>
+          <AddNewConceptual data={props.data.id}/>
           </div>
             </Modal>
           </div> ) : null
         );
       }
     
-    class AddNewOther extends Component {
+    class AddNewConceptual extends Component {
         constructor(props) {
             super(props);
             
@@ -124,7 +124,7 @@ import React, { Component } from 'react';
         submitArticle = async (props) => {
             const article = this.state.article
 
-           await db.collection( 'OtherMedia' ).doc(`${this.props.data}`).collection("images")
+           await db.collection( 'Conceptual' ).doc(`${this.props.data}`).collection("Slideshow")
            .add(
                article
            )
@@ -139,10 +139,10 @@ import React, { Component } from 'react';
             return new Promise(async(resolve, reject) => {
                 const file = e.target.files[0]
                 const fileName = uuidv4()
-                storageRef.ref().child("OtherMedia/" + fileName).put(file)
+                storageRef.ref().child("Conceptual/" + fileName).put(file)
                 .then( async snapshot => {
                     
-                    const downloadURL = await storageRef.ref().child("OtherMedia/" +fileName).getDownloadURL()
+                    const downloadURL = await storageRef.ref().child("Conceptual/" +fileName).getDownloadURL()
     
                     resolve({
                         success: true,

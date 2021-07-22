@@ -3,8 +3,31 @@ import firebase from '../../config/firebase';
 import Carousel from 'react-bootstrap/Carousel';
 import parse from 'html-react-parser';
 import ConceptualSlideshow from './conceptualslideshow';
+import { useAuth } from '../../contexts/AuthContext';
 
 const db = firebase.default.firestore()
+
+
+function RemoveProject (props) {
+    const db = firebase.default.firestore()
+
+async function removeProject() {
+    await db.collection("Conceptual").doc(`${props.data.id}`)
+        .delete()
+        
+            .catch( err => console.log(err))
+            location.reload()
+}
+
+  const { currentUser } = useAuth();
+
+  return (
+    currentUser ? (
+        <button onClick={() => removeProject()}>Delete Project</button>
+        ): null 
+
+  );
+}
 
 class ConceptualProjects extends Component {
     constructor(props) {
@@ -69,6 +92,10 @@ class ConceptualProjects extends Component {
                             <ConceptualSlideshow className="ConceptualSlideshow"
                             key={index}
                             data={info}/>
+                            </div>
+                            <div className="deleteproject">
+                                <RemoveProject key={index}
+                                                data={info}/>
                             </div>
                             </div>
                         )

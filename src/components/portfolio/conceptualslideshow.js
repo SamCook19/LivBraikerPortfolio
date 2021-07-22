@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
 import Carousel from 'react-bootstrap/Carousel';
+import GalleryAddition from './edit/add-new-conceptual';
 
 const db = firebase.default.firestore()
 
@@ -73,6 +74,9 @@ render() {
                
                     </Carousel>
                     
+          </div>
+          <div>
+              <GalleryAddition data={this.props.data}/>
           </div>
           <div className="conceptual-spacer"></div>
     </div>
