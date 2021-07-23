@@ -13,7 +13,9 @@ class About extends Component {
                 </div>
                 
                 <div className="about-body">
-                    <h1>About</h1>
+                    <div className="about-header-container">
+                    <h1 className="display-1">About</h1>
+                    </div>
                     <AboutComponent />
                 </div>
             </div>

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import firebase from '../../config/firebase';
+import AccoladeModal from './edit/addaccolade';
+import AboutModal from './edit/editabout';
+import parse from 'html-react-parser';
+import HeadshotModal from './edit/changeheadshot';
 
 const db = firebase.default.firestore()
 
@@ -102,7 +106,7 @@ class AboutComponent extends Component {
                       this.state.isLoaded ?
                         this.state.headshot.map((headshot, index) => {
                           return(
-                            <div>
+                            <div className="headshot-container">
                           <Headshot className="Headshot"
                             key={index}
                             data={headshot}
@@ -112,6 +116,9 @@ class AboutComponent extends Component {
                         })
                         : '' 
                       }
+                      <div className="headshot-edit">
+                          <HeadshotModal />
+                      </div>
                 </div>
                 <div className="about">
                 {
@@ -128,6 +135,7 @@ class AboutComponent extends Component {
                         })
                         : '' 
                       }
+                      <div className="edit-about"><AboutModal /></div>
                 </div>
                 <div className="accolades">
                 {
@@ -144,7 +152,9 @@ class AboutComponent extends Component {
                         })
                         : '' 
                       }
-                    
+                    <div className="add-accolade">
+                      <AccoladeModal />
+                    </div>
                 </div>
             </div>
         );
@@ -174,7 +184,7 @@ const About = (props) => {
     return (
         <div className="about-container">
                  <div className="about-container">
-                    {props.data.About}
+                    {parse(props.data.About)}
                 </div>
         </div>
     )
