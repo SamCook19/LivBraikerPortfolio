@@ -137,6 +137,7 @@ class AboutComponent extends Component {
                       }
                       <div className="edit-about"><AboutModal /></div>
                 </div>
+                <h1 className="display-2">Awards and Accolades</h1>
                 <div className="accolades">
                 {
                       this.state.isLoaded ?

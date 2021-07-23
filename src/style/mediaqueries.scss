@@ -11,5 +11,46 @@
     .gallery-container {
         top: unset;
     }
+    .DigitalImage {
+        width: 250px;
+    }
+    .DigitalImage img {
+        height: 300px;
+    }
+
+    .TraditionalImage {
+        width: 250px;
+    }
+
+    .TraditionalImage img {
+        height: 300px;
+    }
+    
 }
 
+@media (max-width: 1600px) {
+    .DigitalGalleryContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1400px) {
+    .TraditionalGalleryContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .DigitalGalleryContainer {
+        grid-template-columns: 1fr;
+    }
+    .TraditionalGalleryContainer {
+        grid-template-columns: 1fr;
+    }
+    .display-2 {
+        font-size: 2.5rem !important;
+    }
+    .illustration-spacer {
+        height: unset;
+    }
+}
