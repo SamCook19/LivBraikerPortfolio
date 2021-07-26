@@ -177,6 +177,7 @@ const Accolades = (props) => {
     return (
         <div className="accoladeContainer">
             <h3 className="accolade">{props.data.accolade}</h3>
+            <div className="seperator"></div>
             </div>
     )
 }
@@ -186,6 +187,7 @@ const About = (props) => {
         <div className="about-container">
                  <div className="about-container">
                     {parse(props.data.About)}
+                    
                 </div>
         </div>
     )

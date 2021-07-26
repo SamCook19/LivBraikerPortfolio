@@ -6,13 +6,13 @@ export default function ContactForm() {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_513nv6e', 'template_t241g0h', e.target, 'user_VfVWKG6WCJ4vDEdQkClCo')
+    emailjs.sendForm('service_3st4xuj', 'template_js9evsu', e.target, 'user_VfVWKG6WCJ4vDEdQkClCo')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
           console.log(error.text);
       });
-      e.target.reset()
+      e.target.reload()
   }
 
 
