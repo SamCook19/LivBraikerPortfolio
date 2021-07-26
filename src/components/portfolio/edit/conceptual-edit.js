@@ -85,7 +85,7 @@ function rand() {
                 subtitle: ''
             },
             article: 
-                {featuredImages: '' }
+                {createDate: new Date() }
             
         }
     }

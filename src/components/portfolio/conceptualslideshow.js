@@ -22,6 +22,7 @@ getMyImages = () => {
     db
     .collection( 'Conceptual' ).doc(`${this.props.data.id}`)
     .collection('Slideshow')
+    .orderBy("createDate", "desc")
     .get()
     .then(docs => {
         if(!docs.empty) {

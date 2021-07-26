@@ -79,7 +79,8 @@ import React, { Component } from 'react';
             
             this.state={
                 article: {
-                    featuredImage: ''
+                    featuredImage: '',
+                    createDate: new Date()
                 }
             }
         }
@@ -120,7 +121,6 @@ import React, { Component } from 'react';
         ]
 
     
-    
         submitArticle = async (props) => {
             const article = this.state.article
 
@@ -133,6 +133,7 @@ import React, { Component } from 'react';
            location.reload()
            
    }
+
                 
     
         uploadImageCallBack = (e) => {
