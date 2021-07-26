@@ -18,7 +18,7 @@ export default function ContactForm() {
 
   return (
     <div className='ContactForm'>
-      <div className='container'>
+      <div className='container-regular'>
         <div className='row'>
           <div className='col-12 text-center'>
             <div className='contactForm'>
@@ -78,6 +78,70 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
+
+      <div className='container-mobile'>
+        <div className='row'>
+          <div className='col text-center'>
+            <div className='contactForm'>
+              <form id='contact-form' onSubmit={sendEmail}>
+                {/* Row 1 of form */}
+                <div className='col formCol'>
+                  <div className='row'>
+                    <input
+                      type='text'
+                      name='name'
+                      className='name-area'
+                      placeholder='Name'
+                    ></input>
+                  </div>
+                  <div className='row'>
+                    <input
+                      type='email'
+                      name='email'
+                      className='email-area'
+                      placeholder='Email address'
+                    ></input>
+                    
+                  </div>
+                  
+                  <div className='row'>
+                    <input
+                      type='text'
+                      name='subject'
+                      className='subject-area'
+                      placeholder='Subject'
+                    ></input>
+                    
+                  </div>
+                 
+                
+                </div>
+               
+                {/* Row 3 of form */}
+                <div className='row formRow'>
+                  <div className='col'>
+                    <textarea className='message-area'
+                      rows={3}
+                      name='message'
+                      placeholder='Message'
+                    ></textarea>
+                  </div>
+                </div>
+                <div className='submit-contact'>
+                <button className='submit-btn' type='submit'>
+                  Submit
+                </button>
+                </div>
+              </form>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    
   );
 };
